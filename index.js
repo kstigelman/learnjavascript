@@ -1,3 +1,5 @@
+//A discord bot that deletes the messages that include its name
+
 const Discord = require('discord.js');
 const config = require("./config.json");
 
