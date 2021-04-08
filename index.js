@@ -21,10 +21,7 @@ client.on("message", function(message) {
   {
 	  return;
   }
-  if (!message.content.startsWith(prefix)) 
-  {
-	  return;
-  }
+ 
   for(var i = 0; i < banned_words.length; i++)
   {
 	  if(message.content.strip().lower().includes(banned_words[i]))
@@ -32,7 +29,11 @@ client.on("message", function(message) {
 		  message.delete();
 	  }
   }
-  
+	
+   if (!message.content.startsWith(prefix)) 
+  {
+	  return;
+  }
   const commandBody = message.content.slice(prefix.length);
   const args = commandBody.split(' ');
   const command = args.shift().toLowerCase();
